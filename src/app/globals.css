@@ -5,6 +5,8 @@
   --foreground: #171717;
   --font-poppins: "Poppins", sans-serif;
   --font-sans: "Open Sans", sans-serif;
+  --primary-color: '#44BEC1';
+  --button-color:"#44BEC1"
 }
 
 @theme inline {
@@ -20,6 +22,8 @@
     --foreground: #ededed;
     --font-poppins: "Poppins", sans-serif;
     --font-sans: "Open Sans", sans-serif;
+    --color-primary: var(--primary-color);
+    --color-button: var(--button-color)
   }
 }
 
