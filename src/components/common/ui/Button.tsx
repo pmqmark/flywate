@@ -5,7 +5,7 @@ import React from 'react'
 
 const Button = ({title, link, className}:ButtonProps) => {
   return (
-    <Link href={link || ""} title={title || "Button"} className={cs('bg-button p-1.5 md:p-2 uppercase px-2 text-xs md:px-5', className)}>
+    <Link href={link || ""} title={title || "Button"} className={cs('bg-button p-1.5 md:p-2 uppercase px-5 text-xs md:text-sm md:px-5', className)}>
       <button className='cursor-pointer'>
         {title}
       </button>
