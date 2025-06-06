@@ -1,5 +1,6 @@
 import Catalog from "@/components/home/Catalog";
 import HeroSection from "@/components/home/HeroSection";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -9,6 +10,9 @@ export default function Home() {
 
       {/* Our Catalog */}
       <Catalog />
+
+      {/* testimonials */}
+      <Testimonials />
     </>
   );
 }
