@@ -1,8 +1,8 @@
 import React from "react"
 
 export type ContainerProp = {
-    children: React.ReactNode,
-    className: string
+    children?: React.ReactNode,
+    className?: string
 }
 
 export type ButtonProps = {

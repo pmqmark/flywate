@@ -1,7 +1,14 @@
+import Catalog from "@/components/home/Catalog";
+import HeroSection from "@/components/home/HeroSection";
+
 export default function Home() {
   return (
-    <div className="md:h-[100vh] w-full">
-      <video autoPlay muted loop src={"/home/video.mp4"} className="w-full h-full object-cover"/>
-    </div>
+    <>
+      {/* Hero section */}
+      <HeroSection />
+
+      {/* Our Catalog */}
+      <Catalog />
+    </>
   );
 }
