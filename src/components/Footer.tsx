@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className='border-t-2 border-primary'>
       <div className='overflow-hidden flex flex-col md:flex-row relative'>
-        <div className='w-full md:w-[25%] px-5 md:p-20 md:px-10 flex items-center justify-center'>
+        <div className='w-full md:w-[25%]  md:p-20 md:px-10 flex md:items-center md:justify-center'>
           <Link href={'/'} title='logo' className='relative p-5 md:p-10 md:px-10 '>
             <Image
               src={"/logoFooter.png"}
@@ -25,15 +25,42 @@ const Footer = () => {
           </Link>
         </div>
 
+        {/* Mobile */}
+        <div className="w-full md:w-[75%] bg-primary/10 md:hidden"  >
+
+          <div className='uppercase p-5 gap-5 md:p-20 md:px-40 w-full h-full flex flex-col md:flex-row items-start z-50'>
+            {
+              NavData.map((item) => (
+                <div className='flex flex-col gap-1 md:gap-5 md:mt-10 md:ml-20 ' key={item.id}>
+                  <h1 className='md:text-[28px] font-semibold md:pb-4'>{item.title}</h1>
+                  {
+                    item.content.map((list) => (
+                      <ul className='hover:text-primary ease-in-out duration-300 cursor-pointer' key={list.id}>{list.title}</ul>
+                    ))
+                  }
+                </div>
+              ))
+            }
+
+          </div>
+
+          <div className='flex items-center justify-start text-white p-5 gap-5'>
+            <SlSocialFacebook />
+            <CiTwitter />
+            <SlSocialInstagram />
+          </div>
+        </div>
+
+        {/* window bg */}
         <div
-          className="w-full md:w-[75%] bg-primary/10"
+          className="w-full md:w-[75%] bg-primary/10 hidden md:block"
           style={{ clipPath: 'polygon(150px 0, 100% 0, 100% 100%, 0 100%)', }}
         >
 
           <div className='uppercase p-5 gap-5 md:p-20 md:px-40 w-full h-full flex flex-col md:flex-row items-start z-50'>
             {
               NavData.map((item) => (
-                <div className='flex flex-col gap-5 md:mt-10 md:ml-20 ' key={item.id}>
+                <div className='flex flex-col gap-2 md:gap-5 md:mt-10 md:ml-20 ' key={item.id}>
                   <h1 className='md:text-[28px] font-semibold md:pb-4'>{item.title}</h1>
                   {
                     item.content.map((list) => (
