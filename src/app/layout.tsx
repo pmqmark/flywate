@@ -19,7 +19,7 @@ const openSans = Open_Sans({
 
 
 export async function generateMetadata() {
-  const image = "/logo.png";
+  const image = "../../public/tabLogo.png";
 
   return {
     ...GLOBAL_METADATA, // Spread global defaults first

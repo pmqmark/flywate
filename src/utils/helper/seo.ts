@@ -11,7 +11,7 @@ export const GLOBAL_METADATA = {
     },
     metadataBase: new URL(BASE_URL_FRONTEND),
     icon: {
-        icon: "/favicon.ico",
+        icon: "/tabLogo.png",
         apple: "/apple-touch-icon.png",
     }
 }

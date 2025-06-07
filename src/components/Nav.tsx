@@ -24,7 +24,7 @@ const Nav = () => {
       </div>
 
       <div onClick={() => setIsOpen(true)} className='md:w-[35%] flex items-center justify-end p-3 md:px-10 '>
-        <Button title="Contact Us" link='' />
+        <Button title="Contact Us" link='/' />
       </div>
 
       {
