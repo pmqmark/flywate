@@ -1,11 +1,17 @@
 'use client'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import React, { useState, useEffect, useCallback } from 'react'
 
 const ProductImage = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isLoading, setIsLoading] = useState(true)
-  
+  const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
   // Sample product images - replace with your actual image paths
   const productImages = [
     "/product/product2.png",
@@ -50,15 +56,14 @@ const ProductImage = () => {
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
         </div>
       )}
-      
+
       {/* Main image container */}
       <div className='relative w-full max-w-[780px] h-[400px] md:h-[500px]'>
         {productImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-500 ${
-              currentSlide === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-500 ${currentSlide === index ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              }`}
           >
             <Image
               src={image}
@@ -75,7 +80,7 @@ const ProductImage = () => {
       </div>
 
       {/* Navigation buttons */}
-      <button 
+      <button
         onClick={goToPrevSlide}
         className="absolute left-5 top-1/2 transform -translate-y-1/2  bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition-all cursor-pointer"
         aria-label="Previous image"
@@ -84,7 +89,7 @@ const ProductImage = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-      <button 
+      <button
         onClick={goToNextSlide}
         className="absolute right-5 top-1/2 transform -translate-y-1/2  bg-opacity-50 p-2 rounded-full hover:bg-opacity-80 transition-all cursor-pointer"
         aria-label="Next image"
@@ -100,9 +105,8 @@ const ProductImage = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-1 rounded w-[30px] md:w-[40px] transition-all duration-300 cursor-pointer ${
-              currentSlide === index ? 'bg-primary' : 'bg-[#2E3636]'
-            }`}
+            className={`h-1 rounded w-[30px] md:w-[40px] transition-all duration-300 cursor-pointer ${currentSlide === index ? 'bg-primary' : 'bg-[#2E3636]'
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

@@ -3,6 +3,7 @@ import { GLOBAL_METADATA } from "@/utils/helper/seo";
 import { BASE_URL_FRONTEND } from "@/utils/endpoints";
 import Nav from "@/components/Nav";
 import "./globals.css";
+import SmoothScrollWrapper from "@/contex/InitialLenis";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -62,8 +63,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
-        <Nav />
-        {children}
+        <SmoothScrollWrapper>
+          <Nav />
+          {children}
+        </SmoothScrollWrapper>
       </body>
     </html>
   );
