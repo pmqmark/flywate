@@ -19,7 +19,7 @@ const openSans = Open_Sans({
 
 
 export async function generateMetadata() {
-  const image = "../../public/tabLogo.png";
+  const image = 'https://flywate.vercel.app/tabLogo.png';
 
   return {
     ...GLOBAL_METADATA, // Spread global defaults first

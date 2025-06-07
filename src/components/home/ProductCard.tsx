@@ -1,10 +1,11 @@
 import { ProductProps } from '@/types/product'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const ProductCard = ({ data }: ProductProps) => {
     return (
-        <div className='w-[280px] p-5 border border-primary min-h-[380px] bg-black z-40'>
+        <Link href={`/product/${data.seo_title}`} title={data.title} className='w-[280px] p-5 border border-primary min-h-[380px] bg-black z-40'>
             <Image src={data.img}
                 alt={data.title} title={data.title}
                 className='object-contain'
@@ -19,7 +20,7 @@ const ProductCard = ({ data }: ProductProps) => {
                     <span className='text-[13px] text-[#129777]'>{data.offerPercentage}% off</span>
                 </p>
             </div>
-        </div>
+        </Link>
     )
 }
 
