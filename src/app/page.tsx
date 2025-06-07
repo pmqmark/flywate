@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Catalog from "@/components/home/Catalog";
 import HeroSection from "@/components/home/HeroSection";
 import Testimonials from "@/components/home/Testimonials";
@@ -13,6 +14,8 @@ export default function Home() {
 
       {/* testimonials */}
       <Testimonials />
+
+      <Footer />
     </>
   );
 }

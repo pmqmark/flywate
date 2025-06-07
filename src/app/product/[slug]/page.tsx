@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProductView({ params }: PageProps) {
-  const { slug } = params;
+export default async function ProductView({ params }: PageProps) {
+  const { slug } = await params;
 
   return (
     <div className="h-screen">

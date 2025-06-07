@@ -3,7 +3,6 @@ import { GLOBAL_METADATA } from "@/utils/helper/seo";
 import { BASE_URL_FRONTEND } from "@/utils/endpoints";
 import Nav from "@/components/Nav";
 import "./globals.css";
-import Footer from "@/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -65,7 +64,6 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${openSans.variable} antialiased`}>
         <Nav />
         {children}
-        <Footer/>
       </body>
     </html>
   );
