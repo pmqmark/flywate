@@ -1,12 +1,21 @@
+import { Metadata } from 'next';
 import ProductDetailedView from '@/components/product_view/ProductDetailedView';
-interface GenerateMetadataProps {
+
+interface PageProps {
   params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-// Use inline type definition for page props to avoid conflicts
-export default function ProductView({params}:GenerateMetadataProps) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  // Your metadata generation logic here
+  return {
+    title: `Product ${params.slug}`,
+    // other metadata fields
+  };
+}
 
-  const {slug} = params
+export default function ProductView({ params }: PageProps) {
+  const { slug } = params;
 
   return (
     <div className="h-screen">
