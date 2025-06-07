@@ -131,10 +131,10 @@ const HomeCarousal = () => {
             return (
               <div 
                 key={testimonial.id} 
-                className={`transition-all duration-300 ease-in-out ${isCenter ? 'scale-100 opacity-100' : 'scale-90 opacity-100'}`}
+                className={`transition-all duration-300 ease-in-out ${isCenter ? 'scale-100 opacity-100' : 'scale-95 opacity-100'}`}
                 style={{
-                  flex: isCenter ? '1 0 60%' : '1 0 20%',
-                  maxWidth: isCenter ? '60%' : '100%',
+                  flex: isCenter ? '1 0 60%' : '1 0 40%',
+                  maxWidth: isCenter ? '100%' : '100%',
                 }}
               >
                 <CarousalCard 

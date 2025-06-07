@@ -11,7 +11,6 @@ interface CarousalCardProps {
 const CarousalCard: React.FC<CarousalCardProps> = ({ name, role, image, content }) => {
   return (
     <div className={`border ${content ? " border-primary " :"border-[#061010]"} p-5 md:p-7 flex flex-col items-center text-center justify-center font-sans bg-[#0f0f0f] z-50 h-[250px] md:h-[450px] w-full overflow-hidden`}>
-      {content && (
         <>
           <Image
             src={image}
@@ -28,7 +27,6 @@ const CarousalCard: React.FC<CarousalCardProps> = ({ name, role, image, content 
             {content}
           </p>
         </>
-      )}
     </div>
   )
 }
