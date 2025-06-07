@@ -2,6 +2,7 @@ import ProductDetailedView from '@/components/product_view/ProductDetailedView'
 import { ProductData } from '@/utils/data/product'
 import { BASE_URL_FRONTEND } from '@/utils/endpoints'
 import { GLOBAL_METADATA } from '@/utils/helper/seo'
+import { Metadata } from 'next'
 import React from 'react'
 
 type paramsProps = {
@@ -10,17 +11,12 @@ type paramsProps = {
   }
 }
 
-export async function generateMetadata({ params }: paramsProps) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: paramsProps): Promise<Metadata>  {
+  const { slug } = params;
   const Product = ProductData.find((item) => item.seo_title === slug);
-
-  let image;
-
-  if (Product?.img) {
-    image = `https://flywate.vercel.app/${Product.img}`;
-  } else {
-    image = "https://flywate.vercel.app/tabLogo.png";
-  }
+   const image = Product?.img
+    ? `https://flywate.vercel.app/${Product.img}`
+    : 'https://flywate.vercel.app/tabLogo.png';
 
   return {
     ...GLOBAL_METADATA, // Spread global defaults first
@@ -36,13 +32,13 @@ export async function generateMetadata({ params }: paramsProps) {
       title: "Flywate",
       description: "Flywate Nylon Shuttle",
       type: "website",
-      url: (BASE_URL_FRONTEND),
+      url: `${BASE_URL_FRONTEND}/product/${slug}`,
       images: [
         {
-          url: Product?.img || image,
+          url: image,
           width: 1200,
           height: 630,
-          alt: "Flywate",
+          alt: Product?.title || 'Flywate',
         }
       ]
     },
@@ -57,7 +53,7 @@ export async function generateMetadata({ params }: paramsProps) {
 
 const ProductView = async ({ params }: paramsProps) => {
 
-  const { slug } = await params
+  const { slug } = params
   return (
     <div className='h-screen'>
       <ProductDetailedView id={slug} />
