@@ -5,13 +5,13 @@ import { GLOBAL_METADATA } from '@/utils/helper/seo'
 import { Metadata } from 'next'
 import React from 'react'
 
-type paramsProps = {
+type Props  = {
   params: {
     slug: string
   }
 }
 
-export async function generateMetadata({ params }: paramsProps): Promise<Metadata>  {
+export async function generateMetadata({ params }: Props ): Promise<Metadata>  {
   const { slug } = params;
   const Product = ProductData.find((item) => item.seo_title === slug);
    const image = Product?.img
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: paramsProps): Promise<Metadat
   };
 }
 
-const ProductView = async ({ params }: paramsProps) => {
+const ProductView = async ({ params }: Props ) => {
 
   const { slug } = params
   return (
