@@ -11,7 +11,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
 
   const Product = ProductData.find((item) => item.seo_title === slug);
   const image = Product?.img
@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const ProductView = ({ params }: Props) => {
-  const { slug } = params;
+const ProductView = async({ params }: Props) => {
+  const { slug } = await params;
 
   return (
     <div className="h-screen">
