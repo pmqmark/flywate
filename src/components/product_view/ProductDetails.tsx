@@ -4,10 +4,9 @@ import Button from '../common/ui/Button'
 
 const ProductDetails = ({ data }: ProductProps) => {
   return (
-    <div className='p-5 '>
+    <div className='p-5 font-sans'>
       <h1>FLYWATE Clover 10 Nylon Shuttle - Yellow</h1>
       <div className='space-y-2 mt-3 font-mono'>
-        <h2 className='text-[18px] font-medium'>{data.title}</h2>
         <p className='text-[13px] text-[#ffffff]/60'>{data.seo_Description}</p>
         <p className='flex items-center gap-3 '> <span className='font-semibold text-[17px] '>₹ {data.amount}</span>
           <span className='text-[13px] text-[#ffffff]/60 line-through'>₹{data.originalPrice}</span>

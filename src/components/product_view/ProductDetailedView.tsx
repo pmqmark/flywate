@@ -4,9 +4,9 @@ import ProductImage from './ProductImage';
 import ProductDetails from './ProductDetails';
 import ContainerWrapper from '../common/ContainerWrapper';
 
-const ProductDetailedView = ({ id }: { id: string }) => {
+const ProductDetailedView = () => {
 
-    const Product = ProductData.find((item) => item.seo_title === id);
+    const Product = ProductData[0];
     console.log(Product);
 
     if (!Product) {
