@@ -4,14 +4,13 @@ import { BASE_URL_FRONTEND } from '@/utils/endpoints';
 import { GLOBAL_METADATA } from '@/utils/helper/seo';
 import { Metadata } from 'next';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+interface PageProps {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = params;
 
   const Product = ProductData.find((item) => item.seo_title === slug);
   const image = Product?.img
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `${BASE_URL_FRONTEND}/product/${slug}`,
     },
     openGraph: {
-      ...GLOBAL_METADATA,
+      ...GLOBAL_METADATA.openGraph,
       title: Product?.title || 'Flywate',
       description: Product?.seo_Description || 'Flywate Nylon Shuttle',
       type: 'website',
@@ -51,14 +50,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const ProductView = async({ params }: Props) => {
-  const { slug } = await params;
+export default function ProductView({ params }: PageProps) {
+  const { slug } = params;
 
   return (
     <div className="h-screen">
       <ProductDetailedView id={slug} />
     </div>
   );
-};
-
-export default ProductView;
+}
