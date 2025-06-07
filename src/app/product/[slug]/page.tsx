@@ -4,12 +4,14 @@ import { BASE_URL_FRONTEND } from '@/utils/endpoints';
 import { GLOBAL_METADATA } from '@/utils/helper/seo';
 import { Metadata } from 'next';
 
-interface PageProps {
+// Define props without explicit PageProps to avoid type conflicts
+interface GenerateMetadataProps {
   params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ 
+  params 
+}: GenerateMetadataProps): Promise<Metadata> {
   const { slug } = params;
 
   const Product = ProductData.find((item) => item.seo_title === slug);
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `${BASE_URL_FRONTEND}/product/${slug}`,
     },
     openGraph: {
-      ...GLOBAL_METADATA.openGraph,
+      ...GLOBAL_METADATA,
       title: Product?.title || 'Flywate',
       description: Product?.seo_Description || 'Flywate Nylon Shuttle',
       type: 'website',
@@ -50,7 +52,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProductView({ params }: PageProps) {
+// Use inline type definition for page props to avoid conflicts
+export default function ProductView({ 
+  params 
+}: { 
+  params: { slug: string } 
+}) {
   const { slug } = params;
 
   return (
