@@ -9,7 +9,7 @@ interface ContactModalProps {
 const ContactModal = ({onClose}: ContactModalProps) => {
     return (
         <ModalWrapper className='p-5'  >
-            <div className='bg-background p-3 md:p-6 pb-10 md:px-10 h-fit font-sans'>
+            <div className='bg-background p-3 md:p-6 pb-10 md:px-10 h-fit font-sans border border-primary/40'>
                 <div className='flex justify-between items-center '>
                     <h1 className='font-semibold text-[22px]'>CONTACT US</h1>
                     <IoClose onClick={onClose} className='cursor-pointer' />

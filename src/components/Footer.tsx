@@ -8,7 +8,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='border-t-2 border-primary'>
+    <div className='border-t-2 border-primary text-white'>
       <div className='overflow-hidden flex flex-col md:flex-row relative'>
         <div className='w-full md:w-[25%]  md:p-20 md:px-10 flex md:items-center md:justify-center'>
           <Link href={'/'} title='logo' className='relative p-5 md:p-10 md:px-10 '>

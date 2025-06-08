@@ -5,7 +5,7 @@ import HomeCarousal from './HomeCarousal'
 
 const Testimonials = () => {
   return (
-    <div className='w-full h-full mb-28 md:mb-36 lg:min-h-screen relative overflow-hidden'>
+    <div className='w-full h-full mb-28 md:mb-36 lg:min-h-screen relative overflow-hidden text-white'>
       <Image src={'/home/1.png'} alt='bg-element' title='bg-element' className='absolute top-10 md:top-18 left-0 object-contain w-fit' width={720} height={780} />
       <Image src={'/home/2.png'} alt='bg-element' title='bg-element' className='absolute bottom-0 right-0 object-contain w-fit' width={720} height={780} />
 

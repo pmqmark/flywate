@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default async function ProductView() {
   return (
-    <div className="">
+    <div className="text-white">
       <ProductDetailedView />
 
       {/* footer part */}
