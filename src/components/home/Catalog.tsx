@@ -6,7 +6,7 @@ import ProductCard from './ProductCard'
 
 const Catalog = () => {
   return (
-    <div className='w-full h-full mb-10 lg:h-screen relative overflow-hidden'>
+    <div className='w-full h-full mb-10 lg:h-screen relative overflow-hidden bg-black'>
       <Image src={'/home/bgImage1.png'} alt='bg-element' title='bg-element' className='absolute top-5 md:top-10 right-0 object-contain' width={720} height={780} />
       <Image src={'/home/bgImage2.png'} alt='bg-element' title='bg-element' className='absolute bottom-0 left-0 object-contain' width={720} height={780} />
 
