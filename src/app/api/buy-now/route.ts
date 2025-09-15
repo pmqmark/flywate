@@ -105,8 +105,8 @@ export async function POST(req: Request) {
     // Send to Admin
     await transporter.sendMail({
       from: process.env.SMTP_USER,
-      to: "qmarktechnolabs@gmail.com",
-      // to: "service@flywate.com",
+      // to: "qmarktechnolabs@gmail.com",
+      to: "service@flywate.com",
       subject: `🛒 New Order Received - ${productTitle}`,
       html: generateAdminTemplate(),
     });
