@@ -1,8 +1,11 @@
+'use client'
 import { ProductProps } from '@/types/product'
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../common/ui/Button'
+import BuyNowModal from './BuyNowModal'
 
 const ProductDetails = ({ data }: ProductProps) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <div className='p-5 md:p-14 mt-3 md:mt-20 font-sans '>
@@ -44,8 +47,13 @@ const ProductDetails = ({ data }: ProductProps) => {
         </div>
       </div>
       <div className='bg-black absolute p-5 bottom-0 border-t border-[#FFFFFF]/30 w-full ms:px-14 flex items-center justify-end'>
-        <Button title='BUY NOW' link='/' className='md:px-10' />
+        <Button onClick={() => setOpenModal(true)} title='BUY NOW' className='md:px-10' />
       </div>
+
+
+      {openModal && (
+        <BuyNowModal product={data} onClose={() => setOpenModal(false)} />
+      )}
     </>
   )
 }

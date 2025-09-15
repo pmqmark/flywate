@@ -7,8 +7,9 @@ export type ContainerProp = {
 
 export type ButtonProps = {
     title: string;
-    link: string;
+    link?: string;
     className?: string;
+    onClick?: () => void;
 }
 
 export type ModalWrapperProps = {

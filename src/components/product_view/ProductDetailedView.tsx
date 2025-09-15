@@ -6,7 +6,6 @@ import ProductDetails from './ProductDetails';
 const ProductDetailedView = () => {
 
     const Product = ProductData[0];
-    console.log(Product);
 
     if (!Product) {
         return <div>Product not found</div>;
