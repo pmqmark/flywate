@@ -21,6 +21,8 @@ const BuyNowModal = ({ onClose, product }: BuyNowModalProps) => {
         name: "",
         email: "",
         phone: "",
+        address: "",
+        GST_number: "",
         quantity: 1,
     });
 
@@ -55,7 +57,7 @@ const BuyNowModal = ({ onClose, product }: BuyNowModalProps) => {
             });
 
             if (res.ok) {
-                toast.success("Your order was placed! We’ll connect within 24 hrs.");  
+                toast.success("Your order was placed! We’ll connect within 24 hrs.");
                 onClose();
             } else {
                 toast.error("Something went wrong. Please try again.");
@@ -102,6 +104,22 @@ const BuyNowModal = ({ onClose, product }: BuyNowModalProps) => {
                         placeholder="Phone Number"
                         value={form.phone}
                         onChange={handleChange}
+                        className="w-full border border-white/30 bg-transparent px-3 py-2 text-sm rounded focus:outline-none focus:border-primary"
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="GST_number"
+                        placeholder="GST Number"
+                        value={form.GST_number}
+                        onChange={handleChange}
+                        className="w-full border border-white/30 bg-transparent px-3 py-2 text-sm rounded focus:outline-none focus:border-primary"
+                    />
+                    <textarea
+                        name="address"
+                        placeholder="address"
+                        value={form.address}
+                        onChange={(e) => setForm({ ...form, address: e.target.value })}
                         className="w-full border border-white/30 bg-transparent px-3 py-2 text-sm rounded focus:outline-none focus:border-primary"
                         required
                     />

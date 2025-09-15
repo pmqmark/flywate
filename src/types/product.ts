@@ -7,6 +7,6 @@ export type ProductProps = {
         amount: number,
         originalPrice: number,
         offerPercentage: number,
-        img: string
+        img: string,
     }
 }
