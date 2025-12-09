@@ -23,7 +23,7 @@ const ContactModal = ({onClose}: ContactModalProps) => {
                     <p className='pb-4 w-full md:w-[70%] text-[#FFFFFF] text-[15px]'>
                         {`We are here to help! Whether you have a question, feedback, or just want to say hello, drop us a message and we will get to you soon`}
                     </p>
-                    <div className='bg-[#050D0D] p-4 py-6 md:p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-y-5'>
+                    <div className='bg-[#050D0D] p-4 py-6 md:p-5 grid grid-cols-1 md:grid-cols-2 space-y-5'>
                         <div className='flex  gap-3  text-[13px] md:text-[14px]'>
                             <h3 className='text-[#FFFFFF]/70 '>Mail ID </h3>
                             <span className='text-[14px]'>
@@ -35,16 +35,6 @@ const ContactModal = ({onClose}: ContactModalProps) => {
                             <span className='text-[14px] leading-7'>
                                 +91 7012022315  <br />
                                 +91 8129952753
-                            </span>
-                        </div>
-                        <div className='flex gap-3 text-[13px]  md:text-[14px]'>
-                            <h3 className='text-[#FFFFFF]/70 '>Address </h3>
-                            <span className='text-[14px] leading-7'>
-                                Flywate India Sports Private Limited  <br />
-                                Door no : VIII/232 new road, <br />
-                                Eroor North Post, Thripunithura, <br />
-                                Pin: 682306, <br />
-                                Kerala, India <br />
                             </span>
                         </div>
 

@@ -41,6 +41,16 @@ const Footer = () => {
                 </div>
               ))
             }
+            <div className='flex flex-col gap-1 md:gap-5 md:mt-10 md:ml-20'>
+              <h1 className='md:text-[28px] font-semibold md:pb-4'>ADDRESS</h1>
+              <p className='text-[14px] leading-6 normal-case'>
+                Flywate India Sports Private Limited  <br />
+                Door no : VIII/232 new road, <br />
+                Eroor North Post, Thripunithura, <br />
+                Pin: 682306, <br />
+                Kerala, India
+              </p>
+            </div>
 
           </div>
 
@@ -70,6 +80,16 @@ const Footer = () => {
                 </div>
               ))
             }
+            <div className='flex flex-col gap-2 md:gap-5 md:mt-10 md:ml-20'>
+              <h1 className='md:text-[28px] font-semibold md:pb-4'>ADDRESS</h1>
+              <p className='text-[14px] leading-6 normal-case'>
+                Flywate India Sports Private Limited  <br />
+                Door no : VIII/232 new road, <br />
+                Eroor North Post, Thripunithura, <br />
+                Pin: 682306, <br />
+                Kerala, India
+              </p>
+            </div>
 
           </div>
 
