@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Button from '@/app/admin/components/shared/Button';
 import { MdSearch, MdVisibility } from 'react-icons/md';
 
@@ -205,9 +206,11 @@ export default function OrderList() {
                     </select>
                   </td>
                   <td className='px-6 py-4'>
-                    <Button variant='secondary' size='sm' className='gap-1'>
-                      <MdVisibility /> View
-                    </Button>
+                    <Link href={`/admin/orders/details?id=${order.id}`}>
+                      <Button variant='secondary' size='sm' className='gap-1'>
+                        <MdVisibility /> View
+                      </Button>
+                    </Link>
                   </td>
                 </tr>
               ))}
