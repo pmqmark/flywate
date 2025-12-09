@@ -272,7 +272,20 @@ function AdminOrderDetailsContent() {
 
 export default function AdminOrderDetailsPage() {
   return (
-    <Suspense fallback={<div className='flex-1 p-6 bg-background'>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className='flex-1 p-6 md:p-8 bg-background overflow-auto'>
+          <div className='max-w-6xl mx-auto'>
+            <div className='h-8 bg-white/10 rounded w-48 mb-4 animate-pulse' />
+            <div className='h-4 bg-white/5 rounded w-96 mb-8 animate-pulse' />
+            <div className='space-y-4'>
+              <div className='h-32 bg-white/5 rounded animate-pulse' />
+              <div className='h-32 bg-white/5 rounded animate-pulse' />
+            </div>
+          </div>
+        </div>
+      }
+    >
       <AdminOrderDetailsContent />
     </Suspense>
   );
